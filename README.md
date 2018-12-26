@@ -2,7 +2,9 @@
   <img src="https://getbootstrap.com/docs/4.2/assets/brand/bootstrap-solid.svg" alt="Bootstrap logo" width=72 height=72>
 
   <h1 align="center">Bootstrap 4 RTL</h3>
-
+  <p align="center">
+    based on version 4.2.1
+  </p>
   <p align="center">
     Sleek, intuitive, and powerful front-end framework for faster and easier web development.
   </p>
