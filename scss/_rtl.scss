@@ -1,0 +1,607 @@
+.rtl {
+  text-align: right;
+  direction: rtl;
+
+  // reboot.scss
+  body {
+    text-align: right; // 3
+  }
+
+  caption {
+    text-align: right;
+  }
+
+  dd {
+    margin-right: 0; // Undo browser default
+    margin-left: inherit; // Undo browser default
+  }
+
+  // nav.scss
+  .nav {
+    padding-right: 0;
+    padding-left: unset;
+  }
+
+  // navbar.scss
+  .navbar-nav {
+    padding-right: 0;
+    padding-left: unset;
+
+    .dropdown-menu {
+      float: none;
+    }
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+    margin-left: $navbar-padding-x;
+  }
+
+  .dropdown-menu {
+    float: right;
+    text-align: right; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  }
+
+  // alert.scss
+  .alert-dismissible {
+    padding-right: 0;
+    padding-left: ($close-font-size + $alert-padding-x * 2);
+
+    .close {
+      right: auto;
+      left: 0;
+    }
+  }
+
+  // breadcrumb.scss
+  .breadcrumb-item {
+
+    // The separator between breadcrumbs (by default, a forward-slash: "/")
+    + .breadcrumb-item {
+      padding-right: $breadcrumb-item-padding;
+      padding-left: 0;
+
+      &::before {
+        padding-right: 0;
+        padding-left: $breadcrumb-item-padding;
+      }
+    }
+  }
+
+  // custome-forms.scss
+  .custom-control {
+    padding-right: $custom-control-gutter;
+    padding-left: 0;
+  }
+
+  .custom-control-label {
+    &::before {
+      right: -$custom-control-gutter;
+      left: auto;
+    }
+
+    // Foreground (icon)
+    &::after {
+      right: -$custom-control-gutter;
+      left: auto;
+    }
+  }
+
+  .custom-select {
+    padding: $custom-select-padding-y $custom-select-padding-x $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding);
+    background: $custom-select-bg $custom-select-indicator no-repeat left $custom-select-padding-x center;
+    background-size: $custom-select-bg-size;
+
+    &[multiple],
+    &[size]:not([size="1"]) {
+      padding-left: $custom-select-padding-x;
+      background: none;
+    }
+  }
+
+  .custom-range {
+    padding-right: 0; // Firefox specific
+    padding-left: inherit; // Firefox specific
+
+    &::-ms-fill-upper {
+      margin-right: 0; // arbitrary?
+      margin-left: 15px; // arbitrary?
+    }
+  }
+
+  .custom-control-inline {
+    margin-right: 0;
+    margin-left: $custom-control-spacer-x;
+  }
+
+  .custom-file-label {
+    &::after {
+      right: auto;
+      left: 0;
+      border-right: $custom-file-border-width solid $custom-file-border-color;
+      border-left: 0;
+      @include border-radius($custom-file-border-radius 0 0 $custom-file-border-radius);
+    }
+  }
+
+  // caret.scss
+  @mixin caret-right {
+    border-right: $caret-width solid;
+    border-left: 0;
+  }
+
+  @mixin caret-left {
+    border-top: $caret-width solid transparent;
+    border-left: $caret-width solid;
+  }
+
+  // forms.scss
+  .form-check {
+    padding-right: $form-check-input-gutter;
+    padding-left: 0;
+  }
+
+  .form-check-inline {
+    padding-right: 0; // Override base .form-check
+    margin-right: 0;
+    margin-left: $form-check-inline-margin-x;
+
+    // Undo .form-check-input defaults and add some `margin-right`.
+    .form-check-input {
+      margin-right: 0;
+      margin-left: $form-check-inline-input-margin-x;
+    }
+  }
+
+  .form-inline {
+
+    // Kick in the inline
+    @include media-breakpoint-up(sm) {
+      .form-check {
+        padding-right: 0;
+        padding-left: inherit;
+      }
+
+      .form-check-input {
+        margin-right: 0;
+        margin-left: $form-check-input-margin-x;
+      }
+    }
+  }
+
+  .form-check-input {
+    margin-right: -$form-check-input-gutter;
+    margin-left: 0;
+  }
+
+  // list-group.scss
+  .list-group {
+    padding-right: 0; // reset padding because ul and ol
+    padding-left: inherit; // reset padding because ul and ol
+  }
+
+  // type.scss
+  .list-unstyled {
+    padding-right: 0;
+    padding-left: inherit;
+  }
+
+  .list-inline-item {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-left: $list-inline-padding;
+    }
+  }
+
+  // input-group.scss
+  .input-group {
+
+    > .form-control,
+    > .custom-select,
+    > .custom-file {
+
+      + .form-control,
+      + .custom-select,
+      + .custom-file {
+        margin-right: -$input-border-width;
+        margin-left: 0;
+      }
+    }
+
+    > .form-control,
+    > .custom-select {
+      &:not(:last-child) {
+        @include border-right-radius($border-radius);
+        @include border-left-radius(0);
+      }
+
+      &:not(:first-child) {
+        @include border-right-radius(0);
+        @include border-left-radius($border-radius);
+      }
+
+      &:not(:first-child):not(:last-child) {
+        @include border-radius(0);
+      }
+    }
+
+    > .custom-file {
+      &:not(:last-child) .custom-file-label {
+        @include border-right-radius($border-radius);
+        @include border-left-radius(0);
+      }
+
+      &:not(:first-child) .custom-file-label {
+        @include border-right-radius(0);
+        @include border-left-radius($border-radius);
+      }
+    }
+
+  }
+
+  .input-group > .input-group-prepend > .btn,
+  .input-group > .input-group-prepend > .input-group-text,
+  .input-group > .input-group-append:not(:last-child) > .btn,
+  .input-group > .input-group-append:not(:last-child) > .input-group-text,
+  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+    @include border-right-radius($border-radius);
+    @include border-left-radius(0);
+  }
+
+  .input-group > .input-group-append > .btn,
+  .input-group > .input-group-append > .input-group-text,
+  .input-group > .input-group-prepend:not(:first-child) > .btn,
+  .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+  .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+    @include border-right-radius(0);
+    @include border-left-radius($border-radius);
+  }
+
+  .input-group > .input-group-append:not(:last-child) > .btn:last-child,
+  .input-group > .input-group-append:not(:last-child) > .input-group-text:last-child,
+  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+    @include border-radius(0);
+  }
+
+  .input-group > .input-group-prepend:not(:first-child) > .btn:first-child,
+  .input-group > .input-group-prepend:not(:first-child) > .input-group-text:first-child,
+  .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+    @include border-radius(0);
+  }
+
+  .input-group-prepend,
+  .input-group-append {
+
+    .btn + .btn,
+    .btn + .input-group-text,
+    .input-group-text + .input-group-text,
+    .input-group-text + .btn {
+      margin-right: -$input-border-width;
+      margin-left: 0;
+    }
+  }
+
+  .input-group-prepend {
+    margin-right: 0;
+    margin-left: -$input-border-width;
+  }
+
+  .input-group-append {
+    margin-right: -$input-border-width;
+    margin-left: 0;
+  }
+
+  // modal.scss
+  .modal-header {
+    .close {
+      margin: (-$modal-header-padding) auto (-$modal-header-padding) (-$modal-header-padding);
+    }
+  }
+
+  .modal-footer {
+
+    // Easily place margin between footer elements
+    > :not(:first-child) {
+      margin-right: .25rem;
+      margin-left: 0;
+    }
+
+    > :not(:last-child) {
+      margin-right: 0;
+      margin-left: .25rem;
+    }
+  }
+
+  // button-group.scss
+  .btn-group {
+    > .btn:first-child {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    // Reset rounded corners
+    > .btn:not(:last-child):not(.dropdown-toggle),
+    > .btn-group:not(:last-child) > .btn {
+      @include border-right-radius($border-radius);
+      @include border-left-radius(0);
+    }
+
+    > .btn:not(:first-child),
+    > .btn-group:not(:first-child) > .btn {
+      @include border-right-radius(0);
+      @include border-left-radius($border-radius);
+    }
+
+    > .btn:not(:last-child):not(:first-child):not(.dropdown-toggle),
+    > .btn-group:not(:last-child):not(:first-child) > .btn {
+      @include border-radius(0);
+    }
+  }
+
+  .btn-group,
+  .btn-group-vertical {
+
+    // Prevent double borders when buttons are next to each other
+    .btn + .btn,
+    .btn + .btn-group,
+    .btn-group + .btn,
+    .btn-group + .btn-group {
+      margin-right: -$btn-border-width;
+      margin-left: 0;
+    }
+  }
+
+  .btn-group-vertical {
+
+    > .btn + .btn,
+    > .btn + .btn-group,
+    > .btn-group + .btn,
+    > .btn-group + .btn-group {
+      margin-right: 0;
+      margin-left: inherit;
+    }
+  }
+
+  // dropdown.scss
+  .dropdown-toggle {
+    @if $enable-caret {
+      &::after {
+        margin-right: $caret-width * .85;
+        margin-left: 0;
+      }
+
+      &:empty::after {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .dropdown-toggle-split {
+
+    &::after,
+    .dropup &::after,
+    .dropright &::after {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .dropleft &::before {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
+  .dropleft {
+    .dropdown-menu {
+      right: auto;
+      left: 100%;
+      margin-right: auto;
+      margin-left: $dropdown-spacer;
+    }
+
+    .dropdown-toggle {
+      @if $enable-caret {
+        &::before {
+          margin-right: 0;
+          margin-left: $caret-width * .85;
+        }
+      }
+    }
+  }
+
+  // card.scss
+  .card-link {
+    float: right;
+
+    + .card-link {
+      margin-right: $card-spacer-x;
+      margin-left: 0;
+    }
+  }
+
+  .card-group {
+    @include media-breakpoint-up(sm) {
+      > .card {
+        + .card {
+          margin-right: 0;
+          margin-left: auto;
+          border-right: 0;
+          border-left: $card-border-width solid $card-border-color;
+        }
+
+        // Handle rounded corners
+        @if $enable-rounded {
+          &:first-child {
+            @include border-right-radius($card-border-radius);
+            @include border-left-radius(0);
+
+            .card-img-top,
+            .card-header {
+              border-top-left-radius: 0;
+              border-top-right-radius: $card-border-radius;
+            }
+
+            .card-img-bottom,
+            .card-footer {
+              border-bottom-right-radius: $card-border-radius;
+              border-bottom-left-radius: 0;
+            }
+          }
+
+          &:last-child {
+            @include border-right-radius(0);
+            @include border-left-radius($card-border-radius);
+
+            .card-img-top,
+            .card-header {
+              border-top-left-radius: $card-border-radius;
+              border-top-right-radius: 0;
+            }
+
+            .card-img-bottom,
+            .card-footer {
+              border-bottom-right-radius: 0;
+              border-bottom-left-radius: $card-border-radius;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // pagination.scss
+  .pagination {
+    padding-right: 0;
+    padding-left: inherit;
+  }
+
+  .page-link {
+    margin-right: -$pagination-border-width;
+    margin-left: 0;
+  }
+
+  .page-item {
+    &:first-child {
+      .page-link {
+        margin-right: 0;
+        margin-left: auto;
+        @include border-right-radius($border-radius);
+        @include border-left-radius(0);
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        @include border-right-radius(0);
+        @include border-left-radius($border-radius);
+      }
+    }
+  }
+
+  // carousel.scss
+  .carousel-control-prev {
+    right: 0;
+    left: auto;
+
+    @if $enable-gradients {
+      background: linear-gradient(90deg, rgba($black, .25), rgba($black, .001));
+    }
+  }
+
+  .carousel-control-next {
+    right: auto;
+    left: 0;
+
+    @if $enable-gradients {
+      background: linear-gradient(270deg, rgba($black, .25), rgba($black, .001));
+    }
+  }
+
+  .carousel-control-prev-icon {
+    background-image: $carousel-control-next-icon-bg;
+  }
+
+  .carousel-control-next-icon {
+    background-image: $carousel-control-prev-icon-bg;
+  }
+
+  .carousel-indicators {
+    li {
+
+      // Use pseudo classes to increase the hit area by 10px on top and bottom.
+      &::before {
+        right: 0;
+        left: auto;
+      }
+
+      &::after {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  // embed.scss
+  .embed-responsive {
+
+    .embed-responsive-item,
+    iframe,
+    embed,
+    object,
+    video {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  // close.scss
+  .close {
+    float: left;
+  }
+
+  // tooltip.scss
+  .tooltip {
+    text-align: right; // Fallback for where `start` is not supported
+    text-align: start; // stylelint-disable-line declaration-block-no-duplicate-properties
+  }
+
+  @mixin make-col-offset-rtl($size, $columns: $grid-columns) {
+    $num: $size / $columns;
+    margin-right: if($num == 0, 0, percentage($num));
+    margin-left: 0;
+  }
+
+  @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+      $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+      @include media-breakpoint-up($breakpoint, $breakpoints) {
+
+        // `$columns - 1` because offsetting by the width of an entire row isn't possible
+        @for $i from 0 through ($columns - 1) {
+          @if not ($infix == ""and $i == 0) {
+
+            // Avoid emitting useless .offset-0
+            .offset#{$infix}-#{$i} {
+              @include make-col-offset-rtl($i, $columns);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @if $enable-grid-classes {
+    @include make-grid-columns();
+  }
+}
+
+.ltr {
+  text-align: left;
+  direction: ltr;
+}
