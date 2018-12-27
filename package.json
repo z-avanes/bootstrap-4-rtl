@@ -1,6 +1,6 @@
 {
-  "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "name": "@z-avanes/bootstrap-4-rtl",
+  "description": "Bootstrap 4 RTL for languages like Farsi, Arabic and ...",
   "version": "4.2.1",
   "version_short": "4.2",
   "keywords": [
@@ -12,8 +12,8 @@
     "framework",
     "web"
   ],
-  "homepage": "https://getbootstrap.com/",
-  "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
+  "homepage": "https://github.com/z-avanes/bootstrap-4-rtl",
+  "author": "Zareh Avanesian (https://www.avadesigner.com)",
   "contributors": [
     "Twitter, Inc."
   ],
@@ -90,10 +90,10 @@
   "main": "dist/js/bootstrap",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twbs/bootstrap.git"
+    "url": "git+https://github.com/z-avanes/bootstrap-4-rtl.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "https://github.com/z-avanes/bootstrap-4-rtl/issues"
   },
   "license": "MIT",
   "dependencies": {},

@@ -14,7 +14,7 @@
 
 Install with npm
 ```sh
-npm install bootstrap-4-rtl
+npm install @z-avanes/bootstrap-4-rtl
 ```
 
 Or clone repository
