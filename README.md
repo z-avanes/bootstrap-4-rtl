@@ -65,7 +65,7 @@ For see Bootstrap 4 RTL demo run documentation locally
 
 You can change default variables and overwrite in scss/_custom-variables.scss
 
-## Custome style
+## Custom style
 
 If you have custom style add it in scss/_custom-style.scss
 
