@@ -68,21 +68,21 @@
     }
   }
 
-  // custome-forms.scss
+  // custom-forms.scss
   .custom-control {
-    padding-right: $custom-control-gutter;
+    padding-right: $custom-control-gutter + $custom-control-indicator-size;
     padding-left: 0;
   }
 
   .custom-control-label {
     &::before {
-      right: -$custom-control-gutter;
+      right: -($custom-control-gutter + $custom-control-indicator-size);
       left: auto;
     }
 
     // Foreground (icon)
     &::after {
-      right: -$custom-control-gutter;
+      right: -($custom-control-gutter + $custom-control-indicator-size);
       left: auto;
     }
   }
